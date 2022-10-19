@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { PersonajeItem } from "./PersonajeItem";
 
-import Row from "react-bootstrap/Row";
-
 export const PersonajesGrid = ({ category }) => {
   const [images, setImages] = useState([]);
 
@@ -35,11 +33,11 @@ export const PersonajesGrid = ({ category }) => {
   return (
     <>
       <h1 className="mt-2">{category}</h1>
-      <Row xs={1} md={4} className="g-4 mx-auto">
+      <div className="card-grid">
         {images.map((image) => (
           <PersonajeItem key={image.id} {...image} />
         ))}
-      </Row>
+      </div>
     </>
   );
 };
